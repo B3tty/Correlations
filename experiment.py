@@ -15,8 +15,7 @@ class Experiment:
     def assign(self, user):
         string = f"{self.id}{user.id}"
         result = self.hasher.hash(string)
-        print(result)
-
+        return result
 
 
 class Variation:
