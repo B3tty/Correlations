@@ -30,7 +30,7 @@ class Experiment:
             return self.variations[1]
 
     def hash_to_number(self, string: str):
-        return 0
+        return int(string, 16)
 
 class Variation:
     traffic = 0
