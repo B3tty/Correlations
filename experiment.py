@@ -15,10 +15,8 @@ class Experiment:
 
     def assign(self, user):
         string = f"{self.id}{user.id}"
-        hash_str = self.hasher.hash(string)
-        # obtain number from hash_str
-        number = self.hash_to_number(hash_str)
-        return self.get_variation(number)
+        hash_int = self.hasher.hash(string)
+        return self.get_variation(hash_int)
 
     def get_variation(self, number: int):
         # this is okay just for our test, since we'll only use experiments with 2 variations
@@ -29,8 +27,6 @@ class Experiment:
         else:
             return self.variations[1]
 
-    def hash_to_number(self, string: str):
-        return int(string, 16)
 
 class Variation:
     traffic = 0
