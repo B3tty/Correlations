@@ -1,6 +1,7 @@
 from user import User
 from experiment import *
-from md5hasher import Md5Hasher
+from hasher_implems import *
+
 
 
 def init_experiment(hasher: Hasher):
@@ -25,3 +26,7 @@ def check_repartition(experiment: Experiment, population: int):
 
 expA = init_experiment(Md5Hasher())
 check_repartition(expA, 10000)
+
+expB = init_experiment(Sha256Hasher())
+check_repartition(expB, 10000)
+
