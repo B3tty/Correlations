@@ -13,6 +13,11 @@ class Experiment:
         self.variations = [Variation(50, "variation1"), Variation(50, "variation2")]
         self.id = uuid.uuid4()
 
+    def __init__(self, hasher: Hasher):
+        self.variations = [Variation(50, "variation1"), Variation(50, "variation2")]
+        self.id = uuid.uuid4()
+        self.hasher = hasher
+
     def assign(self, user):
         string = f"{self.id}{user.id}"
         hash_int = self.hasher.hash(string)

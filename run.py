@@ -3,12 +3,6 @@ from experiment import *
 from hasher_implems import *
 
 
-def init_experiment(hasher: Hasher):
-    exp = Experiment()
-    exp.hasher = hasher
-    return exp
-
-
 def check_repartition(experiment: Experiment, population: int):
     var1 = 0
     var2 = 0
@@ -60,22 +54,22 @@ def check_correlation(experimentA: Experiment, experimentB: Experiment, populati
 
 # MD5
 print("--------- MD5 ---------")
-expA_md5 = init_experiment(Md5Hasher())
-expB_md5 = init_experiment(Md5Hasher())
+expA_md5 = Experiment(Md5Hasher())
+expB_md5 = Experiment(Md5Hasher())
 check_repartition(expA_md5, 10000)
 check_correlation(expA_md5, expB_md5, 100000)
 
 # Built In Hash
 print("--------- Built In Hash Function ---------")
-expA_bi = init_experiment(BuiltInHasher())
-expB_bi = init_experiment(BuiltInHasher())
+expA_bi = Experiment(BuiltInHasher())
+expB_bi = Experiment(BuiltInHasher())
 check_repartition(expA_bi, 10000)
 check_correlation(expA_bi, expB_bi, 100000)
 
 # # SHA256
 # print("--------- SHA256 ---------")
-# expA_sha256 = init_experiment(Sha256Hasher())
-# expB_sha256 = init_experiment(Sha256Hasher())
+# expA_sha256 = Experiment(Sha256Hasher())
+# expB_sha256 = Experiment(Sha256Hasher())
 # check_repartition(expA_sha256, 10000)
 # check_correlation(expA_sha256, expB_sha256, 1000000)
 
