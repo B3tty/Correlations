@@ -1,4 +1,4 @@
-from experiment import *
+from src.ab_test.experiment import *
 import hashlib
 
 

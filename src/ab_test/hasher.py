@@ -1,5 +1,4 @@
 from abc import ABC
-from experiment import *
 
 
 class Hasher(ABC):

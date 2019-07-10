@@ -1,5 +1,5 @@
 import uuid
-from hasher import Hasher
+from src.ab_test.hasher import Hasher
 
 
 class Experiment:
