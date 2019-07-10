@@ -1,13 +1,12 @@
 import uuid
-from src.ab_test.hasher import Hasher
+
+from ab_test.hasher import Hasher
 
 
 class Experiment:
-
     variations = []
     id = ""
     hasher = Hasher()
-
 
     def __init__(self):
         self.variations = [Variation(50, "variation1"), Variation(50, "variation2")]
