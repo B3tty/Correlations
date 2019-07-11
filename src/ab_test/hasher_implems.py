@@ -1,6 +1,5 @@
 import hashlib
-
-from ab_test.experiment import *
+from src.ab_test.hasher import Hasher
 
 
 class Md5Hasher(Hasher):
