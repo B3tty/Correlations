@@ -1,5 +1,6 @@
-from ab_test.experiment import *
 import hashlib
+
+from ab_test.experiment import *
 
 
 class Md5Hasher(Hasher):
@@ -17,5 +18,5 @@ class Sha256Hasher(Hasher):
 
 
 class BuiltInHasher(Hasher):
-      def hash(self, string: str):
+    def hash(self, string: str):
         return hash(string)
