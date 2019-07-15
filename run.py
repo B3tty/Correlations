@@ -1,6 +1,5 @@
-from src.ab_test.hasher_implems import *
-from src.ab_test.user import User
-from src.ab_test.experiment import Experiment
+from ab_test.user import User
+from ab_test.hasher_implems import *
 
 
 def check_repartition(experiment: Experiment, population: int):
