@@ -8,20 +8,10 @@ class Experiment:
     id = ""
     hasher = Hasher()
 
-    def __init__(self):
+    def __init__(self, hasher: Hasher, exp_id: str = None):
         self.variations = [Variation(50, "variation1"), Variation(50, "variation2")]
-        self.id = uuid.uuid4()
-
-    def __init__(self, hasher: Hasher):
-        self.variations = [Variation(50, "variation1"), Variation(50, "variation2")]
-        self.id = uuid.uuid4()
-        self.hasher = hasher
-
-    def __init__(self, hasher: Hasher, *args):
-        self.variations = [Variation(50, "variation1"), Variation(50, "variation2")]
-        if args:
-            id = args[0]
-            self.id = f'{id:06d}'
+        if exp_id is not None:
+            self.id = exp_id
         else:
             self.id = uuid.uuid4()
         self.hasher = hasher
